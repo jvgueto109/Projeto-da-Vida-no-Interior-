@@ -1,0 +1,93 @@
+:root {
+  --cor-fundo: #f4f1ea;
+  --cor-texto: #2d2d2d;
+  --cor-destaque: #4a7c59;
+  --cor-contraste: #000;
+  --cor-fundo-contraste: #fff;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.8;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: all 0.3s ease;
+}
+
+header {
+  background: var(--cor-destaque);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav#acessibilidade {
+  background: #ddd;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+nav#acessibilidade button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #666;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+nav#acessibilidade button:hover {
+  background: #444;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  color: var(--cor-destaque);
+}
+
+footer {
+  background: var(--cor-destaque);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+
+/* Acessibilidade */
+.contraste {
+  background: var(--cor-contraste) !important;
+  color: var(--cor-fundo-contraste) !important;
+}
+.contraste header,
+.contraste footer {
+  background: var(--cor-contraste) !important;
+  color: var(--cor-fundo-contraste) !important;
+}
+.contraste nav#acessibilidade {
+  background: #000 !important;
+}
+
+.modo-leitura {
+  font-family: "Georgia", serif;
+  line-height: 2;
+  letter-spacing: 0.5px;
+}
