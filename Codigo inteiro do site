@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Vida no Interior - Projeto de João Vitor</title>
+  <style>
+    :root {
+      --cor-fundo: #f4f1ea;
+      --cor-texto: #2d2d2d;
+      --cor-destaque: #4a7c59;
+      --cor-contraste: #000;
+      --cor-fundo-contraste: #fff;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+      background: var(--cor-fundo);
+      color: var(--cor-texto);
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background: var(--cor-destaque);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+    }
+
+    nav#acessibilidade {
+      background: #ddd;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav#acessibilidade button {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 6px;
+      background: #666;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    nav#acessibilidade button:hover {
+      background: #444;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: var(--cor-destaque);
+    }
+
+    footer {
+      background: var(--cor-destaque);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    /* Acessibilidade */
+    .contraste {
+      background: var(--cor-contraste) !important;
+      color: var(--cor-fundo-contraste) !important;
+    }
+    .contraste header,
+    .contraste footer {
+      background: var(--cor-contraste) !important;
+      color: var(--cor-fundo-contraste) !important;
+    }
+    .contraste nav#acessibilidade {
+      background: #000 !important;
+    }
+
+    .modo-leitura {
+      font-family: "Georgia", serif;
+      line-height: 2;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Vida no Interior</h1>
+    <p>Projeto desenvolvido por João Vitor</p>
+  </header>
+
+  <!-- Menu de acessibilidade -->
+  <nav id="acessibilidade">
+    <button onclick="aumentarFonte()">A+</button>
+    <button onclick="diminuirFonte()">A-</button>
+    <button onclick="alternarContraste()">Contraste</button>
+    <button onclick="alternarLeitura()">Modo Leitura</button>
+    <button onclick="resetar()">Resetar</button>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Tranquilidade e Simplicidade</h2>
+      <p>
+        A vida no interior é marcada pela calma e pela tranquilidade. 
+        Diferente da correria das grandes cidades, lá o tempo parece passar mais devagar. 
+        É comum as pessoas conhecerem seus vizinhos e se ajudarem mutuamente.
+      </p>
+    </section>
+
+    <section>
+      <h2>Contato com a Natureza</h2>
+      <p>
+        No interior, o contato com a natureza é constante. 
+        Há rios, campos verdes, animais e o céu estrelado durante a noite, 
+        algo muitas vezes encoberto pela poluição luminosa das cidades.
+      </p>
+    </section>
+
+    <section>
+      <h2>Cultura e Tradições</h2>
+      <p>
+        Festas de colheita, quermesses e celebrações religiosas são muito presentes. 
+        Esses eventos aproximam a comunidade e mantêm tradições vivas de geração em geração.
+      </p>
+    </section>
+
+    <section>
+      <h2>Exemplos de Atividades do Interior</h2>
+      <ul>
+        <li>Pescar em rios e lagos.</li>
+        <li>Colher frutas diretamente do pomar.</li>
+        <li>Participar de festas juninas e feiras locais.</li>
+        <li>Conversar nas praças da cidade.</li>
+        <li>Apreciar o nascer e o pôr do sol no campo.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Projeto feito com dedicação por João Vitor © 2025</p>
+  </footer>
+
+  <script>
+    let tamanhoFonte = 100;
+    let contrasteAtivo = false;
+    let leituraAtiva = false;
+
+    function aumentarFonte() {
+      tamanhoFonte += 10;
+      document.body.style.fontSize = tamanhoFonte + "%";
+    }
+
+    function diminuirFonte() {
+      if (tamanhoFonte > 50) {
+        tamanhoFonte -= 10;
+        document.body.style.fontSize = tamanhoFonte + "%";
+      }
+    }
+
+    function alternarContraste() {
+      contrasteAtivo = !contrasteAtivo;
+      document.body.classList.toggle("contraste", contrasteAtivo);
+    }
+
+    function alternarLeitura() {
+      leituraAtiva = !leituraAtiva;
+      document.body.classList.toggle("modo-leitura", leituraAtiva);
+    }
+
+    function resetar() {
+      tamanhoFonte = 100;
+      document.body.style.fontSize = "100%";
+      contrasteAtivo = false;
+      leituraAtiva = false;
+      document.body.classList.remove("contraste", "modo-leitura");
+    }
+  </script>
+</body>
+</html>
